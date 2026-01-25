@@ -1,0 +1,13 @@
+services:
+  emote-wall-auth:
+    build: .
+    container_name: emote-wall-auth
+    env_file:
+      - .env
+    ports:
+      - 4200:80
+    network_mode: bridge
+    restart: unless-stopped
+    labels:
+      net.unraid.docker.icon: https://raw.githubusercontent.com/Bergbok/Docker-Emote-Wall-Auth/main/icon.png
+      net.unraid.docker.webui: http://[IP]:[PORT:80]/t/login.php
