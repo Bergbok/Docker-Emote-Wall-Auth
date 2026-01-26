@@ -4,6 +4,10 @@ Work in progress.
 
 ### Usage
 
+In your EmoteWall.html:
+- update the [oauthClient variable](https://github.com/RealityRipple/EmoteWall/blob/9a1fb4203411c010fd0e4f046b75062738674704/emotes.html#L1359) with your client IDs
+- replace instances of [ew.realityripple.com](https://ew.realityripple.com) with your domain in [cURLS.html.rr](https://github.com/RealityRipple/EmoteWall/blob/9a1fb4203411c010fd0e4f046b75062738674704/emotes.html#L1590) & [cURLS.api.trovo.gql](https://github.com/RealityRipple/EmoteWall/blob/9a1fb4203411c010fd0e4f046b75062738674704/emotes.html#L1504)
+
 ```bash
 docker pull ghcr.io/Bergbok/Docker-Emote-Wall-Auth
 # or
