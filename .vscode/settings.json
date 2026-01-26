@@ -1,5 +1,8 @@
 {
 	"files.associations": {
 		"*.php.inc": "php"
+	},
+	"symbols.files.associations": {
+		"apache.conf": "http"
 	}
 }
