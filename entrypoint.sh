@@ -57,22 +57,7 @@ jq --arg twitch_id "$TWITCH_CLIENT_ID" \
 	.streamelements.client_secret = $se_secret' \
    /var/www/data/example_auth.json > /var/www/data/auth.json
 
-cat > /etc/apache2/conf-available/emote-wall.conf <<'EOF'
-ServerName ${GLOBAL_HOST}
-DirectoryIndex login.php index.php index.html
-
-<FilesMatch \.php$>
-	SetHandler application/x-httpd-php
-</FilesMatch>
-
-<Directory /var/www/html>
-	Options +FollowSymLinks -Indexes +MultiViews
-	AllowOverride None
-</Directory>
-EOF
-
-a2enmod rewrite >/dev/null || true
-a2enconf emote-wall >/dev/null || true
+echo "ServerName ${GLOBAL_HOST}" > /etc/apache2/conf-enabled/servername.conf
 
 if [[ -n "$KICK_CLIENT_ID" && "$KICK_CLIENT_ID" != "00000000000000000000000000" ]]; then
 	service cron start
